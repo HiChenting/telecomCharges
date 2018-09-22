@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="telecomCharges:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="telecomCharges.war">
+      <element id="artifact" artifact-name="telecomCharges:war exploded" />
+    </root>
+  </artifact>
+</component>

@@ -34,7 +34,7 @@
                 	<li><a href="selectURole" class="role_off"></a></li>
                 </c:if>
                 <c:if test = "${fn:contains(ls[0].powers,2)}">
-                	<li><a href="admin/admin_list.jsp" class="admin_off"></a></li>
+                	<li><a href="${pageContext.request.contextPath}admin/admin_list.jsp" class="admin_off"></a></li>
                 </c:if>
                 <c:if test = "${fn:contains(ls[0].powers,3)}">
                 <li><a href="fee/fee_list.jsp" class="fee_off"></a></li>
@@ -49,9 +49,9 @@
                 <li><a href="bill/bill_list.jsp" class="bill_off"></a></li>
                 </c:if>
                 <c:if test = "${fn:contains(ls[0].powers,7)}">
-                <li><a href="report/report_list.jsp" class="report_off"></a></li>
+                <li><a href="${pageContext.request.contextPath}report/report_list.jsp" class="report_off"></a></li>
                 </c:if>
-                <li><a href="selectUserMeaages" class="information_off"></a></li>
+                <li><a href="user_infoFrom" class="information_off"></a></li>
                 <li><a href="user/user_modi_psw.jsp" class="password_off"></a></li>
             </ul>
            

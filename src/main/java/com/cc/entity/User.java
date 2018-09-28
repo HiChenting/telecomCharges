@@ -10,7 +10,7 @@ public class User {
 	String user_tel;		//用户电话号码
 	String user_email;		//用户电子邮件
 	String user_psw;		//用户密码
-	String user_date;		//最后一次更新用户信息的时间
+	String role_date;		//最后一次更新用户信息的时间
 	String role_name;		//用户的角色
 	private List<Role> roles;
 	private List<Power> powers;	//角色对应的权限
@@ -84,11 +84,11 @@ public class User {
 	public void setUser_psw(String user_psw) {
 		this.user_psw = user_psw;
 	}
-	public String getUser_date() {
-		return user_date;
+	public String getRole_date() {
+		return role_date;
 	}
-	public void setUser_date(String user_date) {
-		this.user_date = user_date;
+	public void setUser_date(String role_date) {
+		this.role_date = role_date;
 	}
 	public String getRole_name() {
 		return role_name;
@@ -105,7 +105,7 @@ public class User {
 	@Override
 	public String toString() {
 		return "User [user_name=" + user_name + ", user_account=" + user_account + ", user_tel=" + user_tel
-				+ ", user_email=" + user_email + ", user_psw=" + user_psw + ", user_date=" + user_date + ", role_name="
+				+ ", user_email=" + user_email + ", user_psw=" + user_psw + ", user_date=" + role_date + ", role_name="
 				+ role_name + ", roles=" + roles + ", powers=" + powers + "]";
 	}
 	

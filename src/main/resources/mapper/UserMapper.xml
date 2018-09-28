@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+ "http://www.mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cc.mapper.UserMapper">
+<resultMap type="User" id="userResultMap" >
+	<id property="user_account" column="user_account" />
+		<result property="user_psw" column="user_psw" />
+		<result property="role_name" column="role_name" />		
+		<result property="user_name" column="user_name" />
+		<result property="user_tel" column="user_tel" />
+		<result property="user_email" column="user_email" />
+		<result property="role_date" column="role_date" />
+        <collection property="powers" column="role_name" select="com.cc.mapper.PowerMapper.selectPidByRname" />
+</resultMap>
+<!-- 通过用户账号查找用户对应的角色名以及相关权限 -->
+<select id="selectUserWithPowerId" resultMap="userResultMap">
+ 		select user_account,role_name,user_name from user where user_account=#{user_account} and user_psw=#{user_psw}
+</select> 
+<!-- 通过用户名和密码判断用户是否存在 -->
+<select id="selectUsers" resultType="User">
+		select user_account,role_name,user_name,user_tel,user_email,role_date from user where user_account = '婷婷' and user_psw = '1'  	
+</select>
+<!-- 通过用户名来更新用户信息 -->
+<update id="updateUserMessage" parameterType="User">
+		update user set user_name=#{user_name},user_tel=#{user_tel},user_email=#{user_email} where user_account = '白白'
+</update>	
+</mapper>
